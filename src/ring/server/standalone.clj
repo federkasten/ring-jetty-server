@@ -1,6 +1,6 @@
 (ns ring.server.standalone
   "Functions to start a standalone Ring server."
-  (:use ring.adapter.jetty
+  (:use ring.adapter.jetty9
         ring.server.options
         ring.middleware.stacktrace
         ring.middleware.reload
@@ -81,7 +81,7 @@
     :browser-uri   - the path to browse to when opening a browser
     :stacktraces?  - if true, display stacktraces when an exception is thrown
     :auto-reload?  - if true, automatically reload source files
-    :reload-paths  - seq of src-paths to reload on change - defaults to [\"src\"]    
+    :reload-paths  - seq of src-paths to reload on change - defaults to [\"src\"]
     :auto-refresh? - if true, automatically refresh browser when source changes
 
   If join? is false, a Server object is returned."
