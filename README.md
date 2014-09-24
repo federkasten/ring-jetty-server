@@ -1,84 +1,17 @@
-# Ring-Server
+# Ring-Jetty-Server
 
-A library for starting a web server to serve a [Ring][1] handler with
-sensible default options and environment variable overrides.
+A fork of [ring-server](https://github.com/weavejester/ring-server) library.
 
-[1]: https://github.com/ring-clojure/ring
+This library supports websocket and spdy using Jetty9 functions.
 
-## Features
+# Usage
 
-When starting in development mode (i.e. `LEIN_NO_DEV` is not set):
+See original ring-server library document <https://github.com/weavejester/ring-server>
 
-* The server finds a free port to start on
-* It automatically reloads changed files
-* It renders exceptions and their stacktraces in HTML
-* A web browser is automatically opened to the started server
+# License
 
-In production:
+Copyright 2013 James Reeves
 
-* You can specify the port via the `PORT` environment variable
-* You can add hooks to run on startup and shutdown.
-
-## Install
-
-Add the following dependency to your `project.clj` file:
-
-    [ring-server "0.3.1"]
-
-## Usage 
-
-Simple usage:
-
-```clojure
-(use 'ring.server.standalone)
-(serve your-handler)
-```
-
-You can also specify a map of options:
-
-```clojure
-(serve your-handler {:port 4040})
-```
-
-The following options are supported:
-
-* `:port`    - The port to start the server on, overrides `$PORT`
-
-* `:join?`   - Whether to wait until the server stops (default true)
-
-* `:init`    - A function executed when the server starts
-
-* `:destroy` - A function executed when the server stops
-
-* `:open-browser?` -
-  True if you want a browser to be opened to the server. Defaults to
-  true in development mode, false in production mode.
-
-* `:browser-uri` -
-  A path to append to the target URL if opening a browser (default 
-  none). The full URI will be constructed like:
-  `http://{host}:{port}{browser-uri}`
-
-* `:stacktraces?` -
-  True if you want a stacktrace to be displayed in the browser when
-  an exception is raised. Default to true in development, false in
-  production.
-
-* `:auto-reload?` -
-  True if you want your source files to be automatically reloaded
-  when they are modified. Defaults to true in development, false in
-  production.
-  
-* `:reload-paths` -
-  A seq of source paths to reload. Defaults to [\"src\"]. 
-  Only relevant if :auto-reload? is true.
-
-* `:auto-refresh?` -
-  True if you want your browser to automatically refresh when source
-  files are changed. Defaults to false.
-
-## License
-
-Copyright © 2013 James Reeves
+Copyright 2014 Takashi AOKI
 
 Distributed under the Eclipse Public License, the same as Clojure.
