@@ -1,7 +1,7 @@
-(ns ring.server.standalone
+(ns ring-jetty.server.standalone
   "Functions to start a standalone Ring server."
-  (:use ring.adapter.jetty9
-        ring.server.options
+  (:use ring-jetty.adapter.jetty
+        ring-jetty.server.options
         ring.middleware.stacktrace
         ring.middleware.reload
         ring.middleware.refresh

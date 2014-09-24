@@ -1,4 +1,4 @@
-(ns ring.util.environment
+(ns ring-jetty.server.util.environment
   "A namespace managing and reading environment variables.")
 
 (def ^{:dynamic true, :doc "A map of environment variables."}

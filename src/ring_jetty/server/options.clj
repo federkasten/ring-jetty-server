@@ -1,6 +1,6 @@
-(ns ring.server.options
+(ns ring-jetty.server.options
   "Functions to retrieve options and settings with sensible defaults"
-  (:use ring.util.environment
+  (:use ring-jetty.server.util.environment
         [clojure.core.incubator :only (-?>)])
   (:require [clojure.string :as str]))
 
@@ -37,6 +37,6 @@
   [options]
   (:stacktraces? options dev-env?))
 
-(defn reload-paths 
+(defn reload-paths
   [options]
   (:reload-paths options ["src"]))

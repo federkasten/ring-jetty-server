@@ -1,6 +1,6 @@
-(ns ring.server.leiningen
+(ns ring-jetty.server.leiningen
   "Functions to start a server from a Leiningen plugin."
-  (:require [ring.server.standalone :as standalone]))
+  (:require [ring-jetty.server.standalone :as standalone]))
 
 (defn- load-var [sym]
   (when sym
